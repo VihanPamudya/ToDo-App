@@ -1,5 +1,17 @@
 FROM node:18-alpine
 
+RUN apk add --no-cache \
+    bash \
+    curl \
+    git \
+    xvfb \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont
+
 WORKDIR /app
 
 COPY package*.json ./
